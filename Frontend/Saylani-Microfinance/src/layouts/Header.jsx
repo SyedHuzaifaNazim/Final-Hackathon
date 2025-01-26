@@ -50,14 +50,7 @@ export default function App() {
             Testimonials
           </a>
         </div>
-        <div className="hidden md:block">
-          <button
-            type="button"
-            className=" py-3 px-8 text-sm bg-teal-500 hover:bg-teal-600 rounded text-white "
-          >
-            Start Free Trial
-          </button>
-        </div>
+
       </div>
     </header>
     </>
