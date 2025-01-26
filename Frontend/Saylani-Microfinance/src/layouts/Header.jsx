@@ -15,96 +15,51 @@ export default function App() {
 
   return (
     <>
-    <section>
-      <div
-        className={`fixed z-50 w-full px-8 py-4 transition-all duration-1000 rounded-full mt-4 max-w-2xl inset-x-0 mx-auto ease-in-out transform ${
-          atTop
-            ? "max-w-2xl"
-            : "bg-black bg-opacity-90 backdrop-blur-xl max-w-4xl"
-        }`}
-      >
-        <div className="flex flex-col w-full p-2 mx-auto md:items-center md:justify-between md:flex-row">
-          <div className="flex flex-row items-center justify-between">
-            <span
-              className={`font-bold tracking-tighter text-black uppercase ${
-                atTop ? "text-black" : "text-white"
-              }`}
-            >
-              MICROFINANCE
-            </span>
-            <button
-              className="md:hidden focus:outline-none"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {/* SVG for burger menu can go here */}
-            </button>
+    <header className="sticky top-0 bg-white shadow">
+      <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
+        <div className="flex items-center text-2xl">
+          <div className="w-12 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path
+                fill="#BEE3F8"
+                d="M44,7L4,23l40,16l-7-16L44,7z M36,23H17l18-7l1,6V23z"
+              />
+              <path
+                fill="#3182CE"
+                d="M40.212,10.669l-5.044,11.529L34.817,23l0.351,0.802l5.044,11.529L9.385,23L40.212,10.669 M44,7L4,23 l40,16l-7-16L44,7L44,7z"
+              ></path>
+              <path
+                fill="#3182CE"
+                d="M36,22l-1-6l-18,7l17,7l-2-5l-8-2h12V22z M27.661,21l5.771-2.244L33.806,21H27.661z"
+              ></path>
+            </svg>
           </div>
-
-          <nav
-            className={`flex-col flex-grow gap-8 hidden pb-4 md:pb-0 md:flex md:flex-row lg:ml-auto justify-end ${
-              menuOpen ? "flex" : "hidden"
-            }`}
+          Saylani Microfinance
+        </div>
+        <div className="flex mt-4 sm:mt-0">
+          <a className="px-4" href="#features">
+            Features
+          </a>
+          <a className="px-4" href="/services">
+            Services
+          </a>
+          <a className="px-4" href="#stats">
+            Stats
+          </a>
+          <a className="px-4" href="#testimonials">
+            Testimonials
+          </a>
+        </div>
+        <div className="hidden md:block">
+          <button
+            type="button"
+            className=" py-3 px-8 text-sm bg-teal-500 hover:bg-teal-600 rounded text-white "
           >
-            <a
-              href="#_"
-              className={`$text-black ${atTop ? "text-black" : "text-white"}`}
-            >
-              About
-            </a>
-            <a
-              href="#_"
-              className={`$text-black ${atTop ? "text-black" : "text-white"}`}
-            >
-              Work
-            </a>
-            <a
-              href="#_"
-              className={`$text-black ${atTop ? "text-black" : "text-white"}`}
-            >
-              Blog
-            </a>
-          </nav>
+            Start Free Trial
+          </button>
         </div>
       </div>
-
-{/* 
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
-        <div className="pointer-events-auto flex w-full max-w-md divide-x divide-neutral-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-          <div className="flex w-0 flex-1 items-center p-4">
-            <div className="w-full">
-              <p className="text-sm font-medium text-neutral-900">Tutorial</p>
-              <p className="mt-1 text-sm text-neutral-500">
-                How to create an adaptable navigation with Astro, Tailwind CSS, and Alpine.js
-              </p>
-              <p className="mt-2 text-xs text-orange-500 underline">
-                <a href="https://lexingtonthemes.com">by © Lexington Themes</a>
-              </p>
-            </div>
-          </div>
-          <div className="flex">
-            <div className="flex flex-col divide-y divide-neutral-200">
-              <div className="flex h-0 flex-1">
-                <a
-                  href="https://lexingtonthemes.com/tutorials/how-to-create-an-animated-navigation-with-alpine-js"
-                  type="button"
-                  className="flex w-full items-center justify-center rounded-none rounded-tr-lg border border-transparent px-4 py-3 text-sm font-medium text-orange-600 hover:text-orange-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                >
-                  Tutorial
-                </a>
-              </div>
-              <div className="flex h-0 flex-1">
-                <a
-                  href="https://github.com/Lexington-Themes/lexington-tutorials/blob/main/src/pages/adaptable-navigation/index.astro"
-                  className="flex w-full items-center justify-center rounded-none rounded-br-lg border border-transparent px-4 py-3 text-sm font-medium text-neutral-700 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                >
-                  Get the code
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-    </section>
+    </header>
     </>
   );
 }

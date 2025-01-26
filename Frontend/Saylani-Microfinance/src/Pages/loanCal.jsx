@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Form, InputNumber, Select, Card, Button, Typography, Alert } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-// ... other imports
-
 const LoanCalculator = () => {
   const location = useLocation();
   const navigate = useNavigate();

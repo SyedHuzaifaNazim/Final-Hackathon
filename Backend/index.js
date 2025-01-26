@@ -179,6 +179,7 @@ dotenv.config();
 const userRoutes = require('../Backend/src/routes/userRoutes');
 const loanRoutes = require('../Backend/src/routes/loan');
 const appointmentRoutes = require('../Backend/src/routes/appointmentRoute');
+const authRoutes = require('../Backend/src/routes/auth');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -189,9 +190,15 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
-
+module.exports = transporter;
 
 const app = express();
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Middleware
 app.use(cors());
