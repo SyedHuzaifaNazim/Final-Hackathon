@@ -1,15 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './layouts/Header'
 import Home from './layouts/Home'
 import services from './Pages/services'
-import form from './Pages/Form'
-import Form from './Pages/Form'
-function App() {
-  const [count, setCount] = useState(0)
+import LoanCalculator from './Pages/loanCal';
 
+function App() {
+  const [count, setCount] = useState(0) 
   return (
     
 <>
@@ -640,10 +639,9 @@ function App() {
                 className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
                 style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
               >
-                <p className="font-semibold text-xl">Service One</p>
+                <p className="font-semibold text-xl">Wedding Plan</p>
                 <p className="mt-4">
-                  An enim nullam tempor gravida donec enim ipsum blandit porta
-                  justo integer odio velna vitae auctor integer.
+                Your occasion deserves our careful planning
                 </p>
               </div>
             </div>
@@ -652,10 +650,9 @@ function App() {
                 className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
                 style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
               >
-                <p className="font-semibold text-xl">Service Two</p>
+                <p className="font-semibold text-xl">Walima Plan</p>
                 <p className="mt-4">
-                  An enim nullam tempor gravida donec enim ipsum blandit porta
-                  justo integer odio velna vitae auctor integer.
+                Celebrate in Style, Seal the Love with Grace
                 </p>
               </div>
             </div>
@@ -664,17 +661,17 @@ function App() {
                 className="p-12 rounded-lg border border-solid border-gray-200 mb-8"
                 style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
               >
-                <p className="font-semibold text-xl">Service Three</p>
+                <p className="font-semibold text-xl">Faltu Ka Loan Chahaiye</p>
                 <p className="mt-4">
-                  An enim nullam tempor gravida donec enim ipsum blandit porta
-                  justo integer odio velna vitae auctor integer.
+                  Loan chahiye lekin pata nhi ha kislie ...
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="services" className="py-20">
+      
+      {/* <section id="services" className="py-20">
         <div className="container mx-auto px-16 items-center flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="lg:pr-32 xl:pr-48">
@@ -997,8 +994,8 @@ function App() {
             </svg>
           </div>
         </div>
-      </section>
-      <section className="py-20">
+      </section> */}
+      {/* <section className="py-20">
         <div className="container mx-auto px-16 items-center flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="lg:pl-32 xl:pl-48">
@@ -1321,8 +1318,8 @@ function App() {
             </svg>
           </div>
         </div>
-      </section>
-      <section className="py-20">
+      </section> */}
+      {/* <section className="py-20">
         <div className="container mx-auto px-16 items-center flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="lg:pr-32 xl:pr-48">
@@ -1645,7 +1642,8 @@ function App() {
             </svg>
           </div>
         </div>
-      </section>
+      </section> */}
+      
       <section id="stats" className="py-20 lg:pt-32">
         <div className="container mx-auto text-center">
           <p className="uppercase tracking-wider text-gray-600">
@@ -1654,26 +1652,26 @@ function App() {
           <div className="flex flex-col sm:flex-row mt-8 lg:px-24">
             <div className="w-full sm:w-1/3">
               <p className="text-4xl lg:text-6xl font-semibold text-teal-500">
-                +100%
+                +99%
               </p>
-              <p className="font-semibold mb-6">Stats Information</p>
+              <p className="font-semibold mb-6">Successful weddings</p>
             </div>
             <div className="w-full sm:w-1/3">
               <p className="text-4xl lg:text-6xl font-semibold text-teal-500">
-                +100%
+                +99%
               </p>
-              <p className="font-semibold mb-6">Stats Information</p>
+              <p className="font-semibold mb-6">Well Organized walimas</p>
             </div>
             <div className="w-full sm:w-1/3">
               <p className="text-4xl lg:text-6xl font-semibold text-teal-500">
-                +100%
+                +1%
               </p>
-              <p className="font-semibold mb-6">Stats Information</p>
+              <p className="font-semibold mb-6">Depends .. <br/> On our mood...</p>
             </div>
           </div>
         </div>
       </section>
-      <section id="testimonials" className="py-20 lg:py-40">
+      {/* <section id="testimonials" className="py-20 lg:py-40">
         <div className="container mx-auto">
           <p className="uppercase tracking-wider mb-8 text-gray-600 text-center">
             What customers are saying
@@ -1762,8 +1760,8 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
+      </section> */}
+      {/* <section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
         <h3 className="text-5xl font-semibold">Ready to grow your business?</h3>
         <p className="mt-8 text-xl font-light">
           Quis lectus nulla at volutpat diam ut. Enim lobortis scelerisque
@@ -1777,47 +1775,11 @@ function App() {
             Get Started Now
           </button>
         </p>
-      </section>
+      </section> */}
+      <LoanCalculator/>
     </main>
-    <footer className="container mx-auto py-16 px-3 mt-48 mb-8 text-gray-800">
-      <div className="flex -mx-3">
-        <div className="flex-1 px-3">
-          <h2 className="text-lg font-semibold">About Us</h2>
-          <p className="mt-5">
-            Ridiculus mus mauris vitae ultricies leo integer malesuada nunc.
-          </p>
-        </div>
-        <div className="flex-1 px-3">
-          <h2 className="text-lg font-semibold">Important Links</h2>
-          <ul className="mt-4 leading-loose">
-            <li>
-              <a href="https://codebushi.com">Terms &amp; Conditions</a>
-            </li>
-            <li>
-              <a href="https://codebushi.com">Privacy Policy</a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex-1 px-3">
-          <h2 className="text-lg font-semibold">Social Media</h2>
-          <ul className="mt-4 leading-loose">
-            <li>
-              <a href="https://dev.to/changoman">Dev.to</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/HuntaroSan">Twitter</a>
-            </li>
-            <li>
-              <a href="https://github.com/codebushi/gatsby-starter-lander">
-                GitHub
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+
   </div>
-  <Form/>
 </>
 
   )
