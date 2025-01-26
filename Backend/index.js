@@ -179,6 +179,17 @@ dotenv.config();
 const userRoutes = require('../Backend/src/routes/userRoutes');
 const loanRoutes = require('../Backend/src/routes/loan');
 const appointmentRoutes = require('../Backend/src/routes/appointmentRoute');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 
 const app = express();
 
