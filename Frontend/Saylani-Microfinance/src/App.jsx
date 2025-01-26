@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import LoanCalculator from './Pages/loanCal';
+// import LoanCalculator from './Pages/loanCal';
 import Header from './layouts/Header';
 
 function App() {
@@ -649,7 +649,7 @@ function App() {
           </div>
         </div>
       </section>
-      <LoanCalculator/> 
+      {/* <LoanCalculator/>  */}
     </main>
 
   </div>
